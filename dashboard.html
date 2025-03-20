@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard</h1>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- User Profile Section -->
+            <section class="box">
+                <h2>User Profile</h2>
+                <form class="form">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="contact">Contact Number</label>
+                    <input type="tel" id="contact" name="contact">
+
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="3"></textarea>
+
+                    <div class="button-container">
+                        <button type="submit">Update Profile</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Patient Details Section -->
+            <section class="box">
+                <h2>Patient Details</h2>
+                <form class="form">
+                    <label for="patientId">Patient ID</label>
+                    <input type="text" id="patientId" name="patientId" disabled>
+
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName">
+
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName">
+
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob">
+
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="contact">Contact Number</label>
+                    <input type="tel" id="contact" name="contact">
+
+                    <div class="button-container">
+                        <button type="submit">Save Patient Details</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Link to Patients Profile -->
+            <section class="box">
+                <h2>Quick Access</h2>
+                <ul>
+                    <li><a href="patients.html">View Patient Profile</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

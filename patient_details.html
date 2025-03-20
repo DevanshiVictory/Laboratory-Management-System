@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Patient Details</h1>
+        </header>
+
+        <section class="patient-info">
+            <h2>Patient Information</h2>
+            <table class="patient-table">
+                <tr>
+                    <th>Patient ID</th>
+                    <td id="patientId"></td>
+                </tr>
+                <tr>
+                    <th>Full Name</th>
+                    <td id="name"></td>
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <td id="dob"></td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td id="gender"></td>
+                </tr>
+                <tr>
+                    <th>Contact Number</th>
+                    <td id="contact"></td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td id="address"></td>
+                </tr>
+                <tr>
+                    <th>Medical History</th>
+                    <td id="medicalHistory"></td>
+                </tr>
+            </table>
+
+            <div class="button-container">
+                <button onclick="editPatient()">Edit Details</button>
+                <button onclick="goBack()" class="back-btn">← Back to Patients</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Dummy patient data
+        const patients = {
+            1: { name: "Vijaybhai", dob: "1980-05-12", gender: "Male", contact: "9876543210", address: "123, ABC Street, City, Country", medicalHistory: "Diabetes, Hypertension" },
+            2: { name: "Jaybhai", dob: "1975-08-22", gender: "Male", contact: "9876543222", address: "456, XYZ Avenue, City, Country", medicalHistory: "Asthma" },
+            3: { name: "Dipaliben", dob: "1985-03-14", gender: "Female", contact: "9876543233", address: "789, LMN Road, City, Country", medicalHistory: "None" },
+            4: { name: "Rasilaben", dob: "1990-11-30", gender: "Female", contact: "9876543244", address: "101, PQR Street, City, Country", medicalHistory: "Allergies" }
+        };
+
+        // Get patient ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const patientId = urlParams.get('id');
+
+        // Display patient details
+        if (patientId && patients[patientId]) {
+            document.getElementById("patientId").textContent = patientId;
+            document.getElementById("name").textContent = patients[patientId].name;
+            document.getElementById("dob").textContent = patients[patientId].dob;
+            document.getElementById("gender").textContent = patients[patientId].gender;
+            document.getElementById("contact").textContent = patients[patientId].contact;
+            document.getElementById("address").textContent = patients[patientId].address;
+            document.getElementById("medicalHistory").textContent = patients[patientId].medicalHistory;
+        } else {
+            document.querySelector(".patient-info").innerHTML = "<h2>Patient not found!</h2>";
+        }
+
+        // Edit patient details (Placeholder function)
+        function editPatient() {
+            alert("Editing functionality will be added here!");
+        }
+
+        // Go back to patients list
+        function goBack() {
+            window.location.href = "patients.html";
+        }
+    </script>
+</body>
+</html>
